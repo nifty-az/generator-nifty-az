@@ -26,7 +26,7 @@ export default class extends Generator {
         type: "string",
         name: "solutionName",
         nessage: "Short solution name",
-        default: us.humanize(currentDir),
+        default: us.titleize(us.humanize(currentDir)),
       },
       {
         type: "string",
