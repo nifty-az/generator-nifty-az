@@ -1,0 +1,16 @@
+# Validating environment variables like:
+
+if [[ ! "${AZURE_ENV_NAME:-}" =~ ^[a-zA-Z0-9-]+-(dev|prod)-[0-9]{3}$ ]]; then
+  echo -e "\033[0;31mAZURE_ENV_NAME must follow the pattern: appname-(dev|prod)-00x\033[0m"
+  exit 1
+fi
+
+# Set an AZD variable that will be added to the AZD environment
+# and made available to later AZD steps:
+#
+# azd env set APP_AUTHENTICATION "true"
+#
+# If you want to set it only on the first run use a conditional:
+# if [ -z "${APP_AUTHENTICATION:-}" ]; then
+#   azd env set APP_AUTHENTICATION "true"
+# fi

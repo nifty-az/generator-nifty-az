@@ -1,0 +1,21 @@
+# Run smoke tests to check that the services are properly deployed
+
+# Or just open the deployed web app in the browser:
+
+if [ -n "${SERVICE_APP_ENDPOINT_URL:-}" ]; then
+  if [ -n "$BROWSER" ]; then
+    $BROWSER "$SERVICE_APP_ENDPOINT_URL"
+  elif which xdg-open > /dev/null; then
+    xdg-open "$SERVICE_APP_ENDPOINT_URL"
+  elif which gnome-open > /dev/null; then
+    gnome-open "$SERVICE_APP_ENDPOINT_URL"
+  elif which open > /dev/null; then
+    open "$SERVICE_APP_ENDPOINT_URL"
+  else
+    echo "Could not detect how to open the application URL at $SERVICE_APP_ENDPOINT_URL"
+  fi
+fi
+
+# The SERVICE_<service>_APP_ENDPOINT_URL variable is set by AZD CLI after deploying the
+# service. See https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/azd-extensibility
+# for more information.
