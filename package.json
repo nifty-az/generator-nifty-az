@@ -30,6 +30,10 @@
     "yeoman-generator": "^7.4.0",
     "yosay": "^3.0.0"
   },
+  "overrides": {
+    "ajv": "^8.17.1",
+    "whatwg-url": "^14.1.0"
+  },
   "repository": "nifty-az/generator-nifty-az",
   "license": "MIT",
   "type": "module"
