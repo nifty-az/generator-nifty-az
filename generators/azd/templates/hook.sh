@@ -4,7 +4,7 @@ set -euo pipefail # exit on error, undefined variable, and error in pipeline
 [ -n "${DEBUG:-}" ] && set -x # enable debug mode if DEBUG is set
 
 <% if (hookLogging) { -%>
-echo -e "  🪝 \033[32mRunning <%- hook %>...\033[0m"
+echo -e "  🪝 \033[32mRunning <%- hook %> hook...\033[0m"
 
 <% } -%>
 # Insert your code here
@@ -18,7 +18,7 @@ echo -e "  🪝 \033[32mRunning <%- hook %>...\033[0m"
 <%- include(`${hook}.ejs`) %>
 
 <% if (hookLogging) { -%>
-echo -e "  🪝 \033[32mFinished <%- hook %>.\033[0m"
+echo -e "  🪝 \033[32mFinished <%- hook %> hook.\033[0m"
 echo
 
 <% } -%>
