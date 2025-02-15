@@ -19,13 +19,12 @@
     "genai",
     "yeoman-generator"
   ],
-  "devDependencies": {
-  },
   "engines": {
     "npm": ">= 4.0.0"
   },
   "dependencies": {
     "chalk": "^5.4.1",
+    "underscore.string": "^3.3.6",
     "yaml": "^2.7.0",
     "yeoman-generator": "^7.4.0",
     "yosay": "^3.0.0"
